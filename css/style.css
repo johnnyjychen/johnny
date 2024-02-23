@@ -1,0 +1,739 @@
+/* style some general stuff */
+body {
+    line-height: 1.6;
+    /* background: #f7f7f7; */
+}
+
+li {
+    list-style-type: none;
+}
+
+ol li {
+    list-style-type: decimal;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+ul li {
+    list-style-type: disc;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.skip {
+    position: absolute;
+    left: -600px;
+    color: #000;
+    text-decoration: none;
+    background: #F4F8F1;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* style the header */
+.hamburger_menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#hamburger_menu {
+    display: none;
+}
+
+#hamburger_menu:checked ~ .nav_list {
+    right: 0;
+}
+
+.nav_list {
+    width: 60%;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    right: -800px;
+    top: 0;
+    transition: 0.5s;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.nav_list a {
+    display: flex;
+    align-items: center;
+    line-height: 2;
+    color: #000;
+    text-decoration: none;
+    font-family: "Nanum Pen Script", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    margin-right: 20px;
+}
+
+a:hover {
+    color: #5284D0;
+    text-decoration: underline;
+}
+
+.nav_list .home_icon a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.icon {
+    width: 24px;
+    margin-right: 10px;
+}
+
+header nav div a h1 {
+    font-size: 1.5rem;
+    font-family: "Chewy", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.home_icon {
+    display: none;
+}
+
+.linkedin_icon {
+    display: block;
+    width: 24px;
+}
+
+.email_icon {
+    display: block;
+    width: 24px;
+}
+
+.connect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* style the home page */
+/* first: style the introduction part */
+.intro {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 50px 0 50px;
+    align-items: center;
+    text-align: center;
+}
+
+.main_img {
+    width: 200px;
+    grid-column: 2/3;
+    justify-self: center;
+}
+
+.edu_img {
+    width: 200px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #2C4863;
+}
+
+.highlight_brown {
+    font-weight: bold;
+    color: #943400;
+}
+
+.intro .main_img img {
+    border-radius: 100%;
+    animation: morph 8s ease-in-out infinite;
+    border: rgba(237, 213, 189, 0.5) solid 15px;
+}
+
+.intro_edu .edu_img img {
+    border-radius: 100%;
+    animation: morph 8s ease-in-out infinite;
+    border: rgba(237, 213, 189, 0.5) solid 15px;
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+   }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+   }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+   }
+}
+
+h1 {
+    font-family: "Readex Pro", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: "Readex Pro", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+h3 {
+    font-family: "Readex Pro", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.user h3 {
+    font-family: "Readex Pro", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* style the index font in the main page and work page */
+.index_h1 {
+    font-family: "Chewy", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.5rem;
+}
+
+.index_h2 {
+    font-family: "Nanum Pen Script", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+}
+
+.intro_text {
+    font-family: "Poor Story", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+}
+
+/* second: style the portfolio in the home page */
+.portfolio {
+    display: grid;
+    grid-template-columns: 55px 1fr 55px;
+    align-items: start;
+    margin-top: 20px;
+    row-gap: 20px;
+    margin-bottom: 40px;
+}
+
+.main_description {
+    grid-column: 2/3;
+    text-align: center;
+}
+
+.work_description {
+    grid-column: 2/3;
+    text-align: center;
+}
+
+.project_content {
+    grid-column: 2/3;
+    text-align: center;
+}
+
+.right_heading {
+    grid-column: 2/3;
+    text-align: right;
+}
+
+.work_style {
+    grid-column: 2/3;
+}
+
+section div a img {
+    border-radius: 15px;
+    /* box-shadow: 0 4px 4px #B5B5B5; */
+}
+
+section div a img:hover {
+    box-shadow: 0 0 0;
+}
+
+.project_description {
+    display: none;
+}
+
+.project_description_white {
+    display: none;
+}
+
+/* style the users' insights */
+.user {
+    border-radius: 40px;
+    padding: 20px;
+    background: #F4F3EE;
+    grid-column: 2/3;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.corner_img {
+    position: absolute;
+    top: -35px;
+    left: -25px;
+    width: 50px;
+    border-radius: 100px;
+}
+
+.problem_corner_img {
+    position: absolute;
+    top: -15px;
+    left: -25px;
+    width: 50px;
+    border-radius: 100px;
+}
+
+.solution {
+    grid-column: 2/3;
+    border-radius: 40px;
+    padding: 50px;
+    background: #F4F3EE;
+    position: relative;
+}
+
+/* style the education page */
+.intro_edu {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 55px 0 55px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.intro_edu ul li {
+    text-align: center;
+    list-style: none;
+}
+
+.intro_edu div ul {
+    list-style-type: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.indented {
+    display: none;
+}
+
+/* style the footer */
+footer {
+    width: 100%;
+    background: #fff;
+    padding-top: 20px;
+}
+
+footer :first-child {
+    font-family: "Nanum Pen Script", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+}
+
+footer h1, footer p{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #000;
+}
+
+/* style the project pages */
+.project {
+    display: grid;
+    grid-template-columns: 55px 1fr 55px;
+    align-items: start;
+    margin-top: 20px;
+}
+
+.full_width_bg {
+    background-color: #fff;
+    width: 100%;
+    grid-column: 1 / -1;
+    padding-bottom: 20px;
+}
+
+.green_background {
+    background: #D6E0D5;
+}
+
+.light_yellow_background {
+    background: #F4F3EE;
+}
+
+.blue_highlighted_background {
+    background: #D8E4E4;
+    border-radius: 30px 30px 0 0;
+}
+
+.full_width_bg .project img {
+    grid-column: 2/3;
+    justify-self: center;
+}
+
+.ps_img {
+    width: 80%;
+}
+
+.ps_size {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #335575;
+}
+
+.problem_statment {
+    grid-column: 2/3;
+    text-align: center;
+}
+
+.analysis_description {
+    grid-column: 2/3;
+    text-align: center;
+}
+
+.heading_pic {
+    margin-top: 34px;
+}
+
+section div p a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.references {
+    display: none;
+}
+
+/* adhd content */
+.suggest {
+    display: none;
+}
+
+.full_img {
+    grid-column: 1/4;
+}
+
+video {
+    width: 100%;
+}
+
+iframe {
+    width: 100%;
+    height: 600px;
+}
+
+/* data content */
+.data_content {
+    padding: 10px;
+    border: #B6B6B6 solid 1px;
+    border-radius: 10px;
+    background: #f5f5f5;
+    text-align: left;
+}
+
+.indented_20 {
+    text-indent: 20px;
+}
+
+.indented_60 {
+    text-indent: 60px;
+}
+
+.indented_80 {
+    text-indent: 80px;
+}
+
+.codes_color {
+    color: #018B96;
+}
+
+/* Video and demo */
+video, iframe {
+    border-radius: 5px;
+}
+/* media on 768px */
+@media screen and (min-width: 768px) {
+    .skip:focus {
+        top: 80px;
+        left: 30px;
+    }
+
+    /* style the header on the laptop*/
+    .hamburger_menu {
+        visibility: hidden;
+    }
+
+    /* style the linkedin */
+    .linkedin {
+        display: flex;
+        align-items: center;
+    }
+
+    .linkedin h1 {
+        margin-right: 20px;
+    }
+
+    /* restyle the grid */
+    .portfolio {
+        grid-template-columns: 250px 1fr 1fr 250px;
+        row-gap: 40px;
+    }
+
+    .nav_list {
+        display: flex;
+        justify-content: space-between;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: #fff;
+        /* box-shadow: 0 2px 2px #B5B5B5; */
+        /* border-bottom: #bbbbbb solid 0.5px; */
+        position: fixed;
+        padding: 0;
+        z-index: 3;
+    }
+
+    .home_icon {
+        display: flex;
+        margin-left: 80px;
+    }
+
+    .nav_items {
+        display: flex;
+        justify-content: end;
+        margin-right: 80px;
+    }
+
+    .nav_list a {
+        margin-left: 20px;
+    }
+
+    /* style home page */
+    .main_description {
+        grid-column: 2/4;
+        text-align: left;
+        margin-bottom: -20px;
+    }
+
+    .work_description {
+        grid-column: 2/4;
+        text-align: left;
+        margin-top: 60px;
+    }
+
+    .work_style {
+        grid-column: 2/4;
+    }
+
+    section div a img {
+        border-radius: 30px;
+        /* box-shadow: 0 4px 4px #B5B5B5; */
+    }
+
+    .intro_text {
+        text-align: left;
+    }
+
+    /* style the hover effect of images */
+    /* the font color is black */
+    a {
+        text-decoration: none;
+    }
+
+    .project_images {
+        position: relative;
+        display: inline-block;
+    }
+
+    .project_images img {
+        display: block;
+        width: 100%;
+        transition: filter 0.3s;
+    }
+
+    .project_description {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #000;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .project_images:hover img {
+        filter: blur(15px);
+    }
+
+    .project_images:hover .project_description {
+        display: block;
+    }
+
+    /* second: the font color is white */
+    .project_images_white {
+        position: relative;
+        display: inline-block;
+    }
+
+    .project_images_white img {
+        display: block;
+        width: 100%;
+        transition: filter 0.3s;
+    }
+
+    .project_description_white {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .project_images_white:hover img {
+        filter: blur(10px);
+    }
+
+    .project_images_white:hover .project_description_white {
+        display: block;
+    }
+
+    /* style the introduction on the laptop */
+    .intro {
+        flex-direction: row;
+        margin-top: 100px;
+    }
+
+    .main_img, .intro_content {
+        flex: 1;
+        padding: 2em;
+    }
+
+    .main_img {
+        max-width: 340px;
+    }
+
+    .edu_img {
+        margin-top: 50px;
+        width: 280px;
+    }
+
+    .edu_content {
+        text-align: left;
+    }
+
+    /* style the work page */
+    .work {
+        margin-left: 200px;
+    }
+
+    /* restyle the education page */
+    .intro_edu {
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+
+    .intro_edu ul li {
+        text-align: left;
+        list-style: disc;
+    }
+
+    .indented {
+        display: block;
+        text-indent: 40px;
+    }
+
+    /* heading pictures of projects */
+    .heading_pic {
+        margin-top: 60px;
+    }
+
+    /* style the project content */
+    .project .project_content h1 {
+        text-align: center;
+    }
+
+    .project {
+        grid-template-columns: 200px 1fr 1fr 1fr 200px;
+        column-gap: 50px;
+        align-items: center;
+    }
+
+    .full_width_bg .project img {
+        grid-column: 2/3;
+    }
+
+    .problem_statment {
+        grid-column: 3/5;
+        text-align: left;
+    }
+
+    .analysis_description {
+        grid-column: 2/4;
+        text-align: left;
+        grid-row: 2;
+    }
+
+    .analysis_right_interface {
+        grid-column: 4/5;
+        grid-row: 2;
+        align-items: end;
+    }
+
+    .project_content {
+        grid-column: 2/5;
+        text-align: left;
+    }
+
+    .right_heading {
+        grid-column: 2/5;
+        text-align: right;
+    }
+
+    .interface_position_right {
+        align-items: end;
+    }
+    
+    .full_img {
+        grid-column: 1/6;
+    }
+
+    .project_margin {
+        margin-top: 140px;
+        margin-bottom: 140px;
+    }
+
+    .user_1 {
+        grid-column: 2/3;
+        height: 100%;
+        grid-row: 6;
+    }
+
+    .user_2 {
+        grid-column: 3/4;
+        height: 100%;
+        grid-row: 6;
+    }
+
+    .user_3 {
+        grid-column: 4/5;
+        height: 100%;
+        grid-row: 6;
+    }
+
+    .suggest {
+        display: block;
+    }
+
+    .references {
+        display: block;
+    }
+
+    .blue_highlighted_background {
+        border-radius: 100px 100px 0 0;
+    }
+
+}
